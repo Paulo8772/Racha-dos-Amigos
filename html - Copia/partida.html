@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodada 08 — Racha dos Amigos</title>
+  <meta name="description" content="Placar, escalações e premiações da Rodada 08 do Racha dos Amigos." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+  <link rel="stylesheet" href="/css/style.css?v=6" />
+  <link rel="stylesheet" href="/css/responsive.css?v=6" />
+</head>
+<body class="page-match-detail">
+
+  <div id="app-nav"></div>
+
+  <main class="container page-content">
+
+    <!-- Esta página lê a partida pela URL (?id=8). Exemplo fixo
+         por enquanto — fica dinâmico na etapa do Supabase. -->
+
+    <!-- ============================================
+         CABEÇALHO + PLACAR EM DESTAQUE
+         ============================================ -->
+    <header class="secao" style="margin-top: var(--esp-5);">
+      <div class="eyebrow">Temporada 2026</div>
+      <h1>Rodada 08</h1>
+    </header>
+
+    <section class="secao">
+      <div class="card card-rodada entrada">
+        <div class="card-rodada__meta">
+          <span class="badge badge--verde">RODADA 08</span>
+          <span class="texto-secundario" style="font-size: 0.8125rem;">24/05/2026</span>
+        </div>
+
+        <div class="placar">
+          <span class="placar__time placar__time--vencedor">Colete Verde</span>
+          <div class="placar__numeros">
+            <span class="placar__gol placar__gol--vencedor">5</span>
+            <span class="placar__x">×</span>
+            <span class="placar__gol">3</span>
+          </div>
+          <span class="placar__time">Colete Preto</span>
+        </div>
+
+        <div class="card-rodada__campeao">🏆 <span>Colete Verde</span></div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         ESCALAÇÕES + ESTATÍSTICAS INDIVIDUAIS
+         ============================================ -->
+    <section class="secao">
+      <div class="card entrada">
+        <div class="time-bloco__titulo">
+          <h3>🟢 Colete Verde</h3>
+          <span class="badge badge--dourado">Campeão</span>
+        </div>
+
+        <div class="jogador-linha">
+          <div class="avatar">DI</div>
+          <span class="jogador-linha__nome">Diego</span>
+          <div class="jogador-linha__stats">
+            <span>⚽ 2</span>
+            <span>🎯 1</span>
+          </div>
+        </div>
+        <div class="jogador-linha">
+          <div class="avatar">LÉ</div>
+          <span class="jogador-linha__nome">Léo</span>
+          <div class="jogador-linha__stats">
+            <span>⚽ 2</span>
+            <span>🎯 1</span>
+          </div>
+        </div>
+        <div class="jogador-linha">
+          <div class="avatar">GU</div>
+          <span class="jogador-linha__nome">Gui</span>
+          <div class="jogador-linha__stats">
+            <span>⚽ 1</span>
+            <span>🎯 0</span>
+          </div>
+        </div>
+        <div class="jogador-linha">
+          <div class="avatar">RA</div>
+          <span class="jogador-linha__nome">Rafa 🧤</span>
+          <div class="jogador-linha__stats">
+            <span>🧤 8</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="card entrada">
+        <div class="time-bloco__titulo">
+          <h3>⚫ Colete Preto</h3>
+        </div>
+
+        <div class="jogador-linha">
+          <div class="avatar">JO</div>
+          <span class="jogador-linha__nome">João</span>
+          <div class="jogador-linha__stats">
+            <span>⚽ 2</span>
+            <span>🎯 1</span>
+          </div>
+        </div>
+        <div class="jogador-linha">
+          <div class="avatar">PE</div>
+          <span class="jogador-linha__nome">Pedro</span>
+          <div class="jogador-linha__stats">
+            <span>⚽ 1</span>
+            <span>🎯 0</span>
+          </div>
+        </div>
+        <div class="jogador-linha">
+          <div class="avatar">LU</div>
+          <span class="jogador-linha__nome">Lucas</span>
+          <div class="jogador-linha__stats">
+            <span>⚽ 0</span>
+            <span>🎯 0</span>
+          </div>
+        </div>
+        <div class="jogador-linha">
+          <div class="avatar">MA</div>
+          <span class="jogador-linha__nome">Matheus</span>
+          <div class="jogador-linha__stats">
+            <span>⚽ 0</span>
+            <span>🎯 0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         PREMIAÇÕES
+         ============================================ -->
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <h2 class="secao__titulo">⭐ Seleção da Rodada</h2>
+      </div>
+      <div class="linha-scroll">
+        <div class="jogador-mini entrada">
+          <div class="avatar avatar--destaque">DI</div>
+          <span class="jogador-mini__nome">Diego</span>
+        </div>
+        <div class="jogador-mini entrada">
+          <div class="avatar avatar--destaque">LÉ</div>
+          <span class="jogador-mini__nome">Léo</span>
+        </div>
+        <div class="jogador-mini entrada">
+          <div class="avatar avatar--destaque">RA</div>
+          <span class="jogador-mini__nome">Rafa</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <h2 class="secao__titulo">🧤 Melhor Goleiro</h2>
+      </div>
+      <div class="card card-goleiro entrada">
+        <div class="avatar avatar--destaque" style="width: 64px; height: 64px; font-size: 1.125rem;">RA</div>
+        <div class="card-goleiro__info">
+          <div class="card-goleiro__nome">Rafa</div>
+          <div class="card-goleiro__stat">8 defesas nesta rodada</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/supabase.js"></script>
+  <script src="/js/app.js?v=6"></script>
+  <script src="/js/partidas.js"></script>
+</body>
+</html>

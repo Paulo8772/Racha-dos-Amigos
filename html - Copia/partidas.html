@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Partidas — Racha dos Amigos</title>
+  <meta name="description" content="Veja todas as partidas do Racha dos Amigos, com placar, data e campeão de cada rodada." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/css/style.css?v=6" />
+  <link rel="stylesheet" href="/css/responsive.css?v=6" />
+</head>
+<body class="page-matches">
+
+  <div id="app-nav"></div>
+
+  <main class="container page-content">
+
+    <!-- ============================================
+         CABEÇALHO
+         ============================================ -->
+    <header class="secao page-heading" style="margin-top: var(--esp-5);">
+      <div class="eyebrow">Temporada 2026 · 8 partidas</div>
+      <h1>⚽ Partidas</h1>
+    </header>
+
+    <!-- ============================================
+         LISTA DE PARTIDAS
+         Ordenada da mais recente para a mais antiga.
+         (dados de exemplo — virão do Supabase na próxima etapa)
+         ============================================ -->
+    <section class="secao match-archive">
+      <div class="grid-1" id="lista-partidas">
+
+        <a href="partida.html?id=8" class="card card-rodada card--link entrada">
+          <div class="card-rodada__meta">
+            <span class="badge badge--verde">RODADA 08</span>
+            <span class="texto-secundario" style="font-size: 0.8125rem;">24/05/2026</span>
+          </div>
+          <div class="placar">
+            <span class="placar__time placar__time--vencedor">Colete Verde</span>
+            <div class="placar__numeros">
+              <span class="placar__gol placar__gol--vencedor">5</span>
+              <span class="placar__x">×</span>
+              <span class="placar__gol">3</span>
+            </div>
+            <span class="placar__time">Colete Preto</span>
+          </div>
+          <div class="card-rodada__campeao">🏆 <span>Colete Verde</span></div>
+        </a>
+
+        <a href="partida.html?id=7" class="card card-rodada card--link entrada">
+          <div class="card-rodada__meta">
+            <span class="badge badge--verde">RODADA 07</span>
+            <span class="texto-secundario" style="font-size: 0.8125rem;">17/05/2026</span>
+          </div>
+          <div class="placar">
+            <span class="placar__time">Colete Verde</span>
+            <div class="placar__numeros">
+              <span class="placar__gol">2</span>
+              <span class="placar__x">×</span>
+              <span class="placar__gol">2</span>
+            </div>
+            <span class="placar__time">Colete Preto</span>
+          </div>
+          <div class="card-rodada__empate">🤝 <span>Empate</span></div>
+        </a>
+
+        <a href="partida.html?id=6" class="card card-rodada card--link entrada">
+          <div class="card-rodada__meta">
+            <span class="badge badge--verde">RODADA 06</span>
+            <span class="texto-secundario" style="font-size: 0.8125rem;">10/05/2026</span>
+          </div>
+          <div class="placar">
+            <span class="placar__time">Colete Verde</span>
+            <div class="placar__numeros">
+              <span class="placar__gol">1</span>
+              <span class="placar__x">×</span>
+              <span class="placar__gol placar__gol--vencedor">4</span>
+            </div>
+            <span class="placar__time placar__time--vencedor">Colete Preto</span>
+          </div>
+          <div class="card-rodada__campeao">🏆 <span>Colete Preto</span></div>
+        </a>
+
+        <a href="partida.html?id=5" class="card card-rodada card--link entrada">
+          <div class="card-rodada__meta">
+            <span class="badge badge--verde">RODADA 05</span>
+            <span class="texto-secundario" style="font-size: 0.8125rem;">03/05/2026</span>
+          </div>
+          <div class="placar">
+            <span class="placar__time placar__time--vencedor">Colete Verde</span>
+            <div class="placar__numeros">
+              <span class="placar__gol placar__gol--vencedor">6</span>
+              <span class="placar__x">×</span>
+              <span class="placar__gol">2</span>
+            </div>
+            <span class="placar__time">Colete Preto</span>
+          </div>
+          <div class="card-rodada__campeao">🏆 <span>Colete Verde</span></div>
+        </a>
+
+        <a href="partida.html?id=4" class="card card-rodada card--link entrada">
+          <div class="card-rodada__meta">
+            <span class="badge badge--verde">RODADA 04</span>
+            <span class="texto-secundario" style="font-size: 0.8125rem;">26/04/2026</span>
+          </div>
+          <div class="placar">
+            <span class="placar__time">Colete Verde</span>
+            <div class="placar__numeros">
+              <span class="placar__gol">3</span>
+              <span class="placar__x">×</span>
+              <span class="placar__gol">3</span>
+            </div>
+            <span class="placar__time">Colete Preto</span>
+          </div>
+          <div class="card-rodada__empate">🤝 <span>Empate</span></div>
+        </a>
+
+        <a href="partida.html?id=3" class="card card-rodada card--link entrada">
+          <div class="card-rodada__meta">
+            <span class="badge badge--verde">RODADA 03</span>
+            <span class="texto-secundario" style="font-size: 0.8125rem;">19/04/2026</span>
+          </div>
+          <div class="placar">
+            <span class="placar__time">Colete Verde</span>
+            <div class="placar__numeros">
+              <span class="placar__gol">2</span>
+              <span class="placar__x">×</span>
+              <span class="placar__gol placar__gol--vencedor">5</span>
+            </div>
+            <span class="placar__time placar__time--vencedor">Colete Preto</span>
+          </div>
+          <div class="card-rodada__campeao">🏆 <span>Colete Preto</span></div>
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/supabase.js"></script>
+  <script src="/js/app.js?v=6"></script>
+  <script src="/js/partidas.js"></script>
+</body>
+</html>
