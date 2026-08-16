@@ -1,140 +1,416 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>Temporadas — Racha dos Amigos</title>
-  <meta name="description" content="Temporada atual, temporadas anteriores e recordes gerais do Racha dos Amigos." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta
+    name="description"
+    content="Temporadas, histórico e recordes gerais do Racha dos Amigos."
+  >
 
-  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
-  <link rel="stylesheet" href="/css/style.css?v=6" />
-  <link rel="stylesheet" href="/css/responsive.css?v=6" />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="/assets/icons/favicon.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css?v=6"
+  >
+
+  <link
+    rel="stylesheet"
+    href="/css/responsive.css?v=6"
+  >
+
 </head>
+
+
 <body class="page-seasons">
+
+
+  <!-- ========================================================
+       NAVEGAÇÃO
+       ======================================================== -->
 
   <div id="app-nav"></div>
 
+
+  <!-- ========================================================
+       CONTEÚDO
+       ======================================================== -->
+
   <main class="container page-content">
 
-    <!-- ============================================
+
+    <!-- ======================================================
          CABEÇALHO
-         ============================================ -->
-    <header class="secao" style="margin-top: var(--esp-5);">
-      <div class="eyebrow">Racha dos Amigos</div>
-      <h1>🏆 Temporadas</h1>
+         ====================================================== -->
+
+    <header
+      class="secao"
+      style="margin-top: var(--esp-5);"
+    >
+
+      <div class="eyebrow">
+        Racha dos Amigos
+      </div>
+
+      <h1>
+        🏆 Temporadas
+      </h1>
+
     </header>
 
-    <!-- ============================================
+
+    <!-- ======================================================
          TEMPORADA ATUAL
-         ============================================ -->
-    <section class="secao">
-      <div class="secao__cabecalho">
-        <h2 class="secao__titulo">Temporada Atual</h2>
-      </div>
-      <a href="temporada2026.html?id=2026" class="card card--link card-temporada entrada">
-        <div class="card-temporada__selo">🟢</div>
-        <div class="card-temporada__info">
-          <div class="card-temporada__nome">Temporada 2026</div>
-          <div class="card-temporada__periodo">Início em 01/01/2026</div>
-        </div>
-        <span class="badge badge--verde">Ativa</span>
-      </a>
-    </section>
+         ====================================================== -->
 
-    <!-- ============================================
-         TEMPORADAS ANTERIORES
-         ============================================ -->
     <section class="secao">
+
       <div class="secao__cabecalho">
-        <h2 class="secao__titulo">Temporadas Anteriores</h2>
+
+        <h2 class="secao__titulo">
+          Temporada Atual
+        </h2>
+
       </div>
-      <div class="grid-1">
-        <a href="temporada2026.html?id=2025" class="card card--link card-temporada entrada">
-          <div class="card-temporada__selo">⚫</div>
+
+
+      <div id="temporada-atual">
+
+        <div class="card card-temporada">
+
+          <div class="card-temporada__selo">
+            🟢
+          </div>
+
           <div class="card-temporada__info">
-            <div class="card-temporada__nome">Temporada 2025</div>
-            <div class="card-temporada__periodo">01/01/2025 até 20/12/2025</div>
+
+            <div class="card-temporada__nome">
+              Carregando...
+            </div>
+
+            <div class="card-temporada__periodo">
+              Buscando temporada ativa
+            </div>
+
           </div>
-          <span class="badge badge--neutro">Encerrada</span>
-        </a>
+
+          <span class="badge badge--verde">
+            Ativa
+          </span>
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- ============================================
-         HISTÓRICO GERAL (todas as temporadas)
-         ============================================ -->
+
+    <!-- ======================================================
+         TEMPORADAS ANTERIORES
+         ====================================================== -->
+
     <section class="secao">
+
       <div class="secao__cabecalho">
-        <h2 class="secao__titulo">Histórico Geral</h2>
+
+        <h2 class="secao__titulo">
+          Temporadas Anteriores
+        </h2>
+
       </div>
 
-      <div class="grid-1">
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">⚽</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Maior Artilheiro</div>
-            <div class="card-destaque__nome">Diego</div>
-          </div>
-          <div class="card-destaque__valor">41 gols</div>
+
+      <div
+        id="temporadas-anteriores"
+        class="grid-1"
+      >
+
+        <div class="card">
+
+          <span class="texto-secundario">
+            Carregando temporadas...
+          </span>
+
         </div>
 
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">🎯</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Maior Assistente</div>
-            <div class="card-destaque__nome">João</div>
-          </div>
-          <div class="card-destaque__valor">27 assist.</div>
-        </div>
-
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">🏆</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Mais Títulos</div>
-            <div class="card-destaque__nome">Rafa</div>
-          </div>
-          <div class="card-destaque__valor">16 títulos</div>
-        </div>
-
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">⭐</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Mais Seleções</div>
-            <div class="card-destaque__nome">Léo</div>
-          </div>
-          <div class="card-destaque__valor">19 seleções</div>
-        </div>
-
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">🧤</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Mais Defesas</div>
-            <div class="card-destaque__nome">Rafa</div>
-          </div>
-          <div class="card-destaque__valor">163 defesas</div>
-        </div>
-
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">🥇</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Mais vezes Melhor Goleiro</div>
-            <div class="card-destaque__nome">Rafa</div>
-          </div>
-          <div class="card-destaque__valor">13 prêmios</div>
-        </div>
       </div>
+
     </section>
+
+
+    <!-- ======================================================
+         HISTÓRICO GERAL
+         ====================================================== -->
+
+    <section class="secao">
+
+      <div class="secao__cabecalho">
+
+        <h2 class="secao__titulo">
+          Histórico Geral
+        </h2>
+
+      </div>
+
+
+      <div
+        id="historico-geral"
+        class="grid-1"
+      >
+
+
+        <!-- MAIOR ARTILHEIRO -->
+
+        <div class="card card-destaque entrada">
+
+          <div class="card-destaque__icone">
+            ⚽
+          </div>
+
+          <div style="flex: 1;">
+
+            <div class="card-destaque__rotulo">
+              Maior Artilheiro
+            </div>
+
+            <div
+              class="card-destaque__nome"
+              data-historico="artilheiro-nome"
+            >
+              Carregando...
+            </div>
+
+          </div>
+
+          <div
+            class="card-destaque__valor"
+            data-historico="artilheiro-valor"
+          >
+            —
+          </div>
+
+        </div>
+
+
+        <!-- MAIOR ASSISTENTE -->
+
+        <div class="card card-destaque entrada">
+
+          <div class="card-destaque__icone">
+            🎯
+          </div>
+
+          <div style="flex: 1;">
+
+            <div class="card-destaque__rotulo">
+              Maior Assistente
+            </div>
+
+            <div
+              class="card-destaque__nome"
+              data-historico="assistente-nome"
+            >
+              Carregando...
+            </div>
+
+          </div>
+
+          <div
+            class="card-destaque__valor"
+            data-historico="assistente-valor"
+          >
+            —
+          </div>
+
+        </div>
+
+
+        <!-- MAIS TÍTULOS -->
+
+        <div class="card card-destaque entrada">
+
+          <div class="card-destaque__icone">
+            🏆
+          </div>
+
+          <div style="flex: 1;">
+
+            <div class="card-destaque__rotulo">
+              Mais Títulos
+            </div>
+
+            <div
+              class="card-destaque__nome"
+              data-historico="titulos-nome"
+            >
+              Carregando...
+            </div>
+
+          </div>
+
+          <div
+            class="card-destaque__valor"
+            data-historico="titulos-valor"
+          >
+            —
+          </div>
+
+        </div>
+
+
+        <!-- MAIS SELEÇÕES -->
+
+        <div class="card card-destaque entrada">
+
+          <div class="card-destaque__icone">
+            ⭐
+          </div>
+
+          <div style="flex: 1;">
+
+            <div class="card-destaque__rotulo">
+              Mais Seleções
+            </div>
+
+            <div
+              class="card-destaque__nome"
+              data-historico="selecao-nome"
+            >
+              Carregando...
+            </div>
+
+          </div>
+
+          <div
+            class="card-destaque__valor"
+            data-historico="selecao-valor"
+          >
+            —
+          </div>
+
+        </div>
+
+
+        <!-- MAIS DEFESAS -->
+
+        <div class="card card-destaque entrada">
+
+          <div class="card-destaque__icone">
+            🧤
+          </div>
+
+          <div style="flex: 1;">
+
+            <div class="card-destaque__rotulo">
+              Mais Defesas
+            </div>
+
+            <div
+              class="card-destaque__nome"
+              data-historico="defesas-nome"
+            >
+              Carregando...
+            </div>
+
+          </div>
+
+          <div
+            class="card-destaque__valor"
+            data-historico="defesas-valor"
+          >
+            —
+          </div>
+
+        </div>
+
+
+        <!-- MELHOR GOLEIRO -->
+
+        <div class="card card-destaque entrada">
+
+          <div class="card-destaque__icone">
+            🥇
+          </div>
+
+          <div style="flex: 1;">
+
+            <div class="card-destaque__rotulo">
+              Mais vezes Melhor Goleiro
+            </div>
+
+            <div
+              class="card-destaque__nome"
+              data-historico="goleiro-nome"
+            >
+              Carregando...
+            </div>
+
+          </div>
+
+          <div
+            class="card-destaque__valor"
+            data-historico="goleiro-valor"
+          >
+            —
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
 
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- ========================================================
+       SCRIPTS
+       ======================================================== -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
   <script src="/js/config.js"></script>
+
   <script src="/js/supabase.js"></script>
-  <script src="/js/app.js?v=6"></script>
+
+  <script src="/js/app.js?v=7"></script>
+
   <script src="/js/temporadas.js"></script>
+
+
 </body>
 </html>
