@@ -3,210 +3,514 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Racha dos Amigos — Estatísticas de Futebol</title>
-  <meta name="description" content="Acompanhe jogadores, partidas, gols, assistências, rankings e temporadas do Racha dos Amigos." />
+
+  <meta
+    name="description"
+    content="Acompanhe jogadores, partidas, gols, assistências, rankings e temporadas do Racha dos Amigos."
+  />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
-  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
-  <link rel="stylesheet" href="/css/style.css?v=6" />
-  <link rel="stylesheet" href="/css/responsive.css?v=6" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="/assets/icons/favicon.png"
+  />
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css?v=6"
+  />
+
+  <link
+    rel="stylesheet"
+    href="/css/responsive.css?v=6"
+  />
 </head>
+
 <body class="page-home">
 
-  <!-- A navegação é montada pelo app.js dentro desta div -->
-  <nav id="app-nav" class="nav" aria-label="Navegação principal">
-    <a href="index.html" class="nav-logo" aria-label="Racha dos Amigos — Início">
-      <img class="nav-logo__img" src="../assets/icons/logo.jpg" alt="">
+  <!-- =========================================================
+       NAVEGAÇÃO
+       ========================================================= -->
+
+  <nav
+    id="app-nav"
+    class="nav"
+    aria-label="Navegação principal"
+  >
+
+    <a
+      href="index.html"
+      class="nav-logo"
+      aria-label="Racha dos Amigos — Início"
+    >
+      <img
+        class="nav-logo__img"
+        src="../assets/icons/logo.jpg"
+        alt=""
+      >
+
       <span>Racha dos Amigos</span>
     </a>
+
     <div class="nav-links">
-      <a href="index.html" class="nav-item nav-item--ativo"><span class="nav-item__icon nav-item__icon--verde" aria-hidden="true"></span><span class="nav-item__label">Início</span></a>
-      <a href="jogadores.html" class="nav-item"><span class="nav-item__icon nav-item__icon--lime" aria-hidden="true"></span><span class="nav-item__label">Jogadores</span></a>
-      <a href="partidas.html" class="nav-item"><span class="nav-item__icon nav-item__icon--dourado" aria-hidden="true"></span><span class="nav-item__label">Partidas</span></a>
-      <a href="rankings.html" class="nav-item"><span class="nav-item__icon nav-item__icon--violeta" aria-hidden="true"></span><span class="nav-item__label">Rankings</span></a>
-      <a href="temporadas.html" class="nav-item"><span class="nav-item__icon nav-item__icon--azul" aria-hidden="true"></span><span class="nav-item__label">Temporadas</span></a>
-      <a href="../admin/registrar-partida.html" class="nav-item nav-item--fab" data-admin-only hidden><span class="nav-item__icon nav-item__icon--verde" aria-hidden="true"></span><span class="nav-item__label">Registrar</span></a>
+
+      <a
+        href="index.html"
+        class="nav-item nav-item--ativo"
+      >
+        <span
+          class="nav-item__icon nav-item__icon--verde"
+          aria-hidden="true"
+        ></span>
+
+        <span class="nav-item__label">
+          Início
+        </span>
+      </a>
+
+      <a
+        href="jogadores.html"
+        class="nav-item"
+      >
+        <span
+          class="nav-item__icon nav-item__icon--lime"
+          aria-hidden="true"
+        ></span>
+
+        <span class="nav-item__label">
+          Jogadores
+        </span>
+      </a>
+
+      <a
+        href="partidas.html"
+        class="nav-item"
+      >
+        <span
+          class="nav-item__icon nav-item__icon--dourado"
+          aria-hidden="true"
+        ></span>
+
+        <span class="nav-item__label">
+          Partidas
+        </span>
+      </a>
+
+      <a
+        href="rankings.html"
+        class="nav-item"
+      >
+        <span
+          class="nav-item__icon nav-item__icon--violeta"
+          aria-hidden="true"
+        ></span>
+
+        <span class="nav-item__label">
+          Rankings
+        </span>
+      </a>
+
+      <a
+        href="temporadas.html"
+        class="nav-item"
+      >
+        <span
+          class="nav-item__icon nav-item__icon--azul"
+          aria-hidden="true"
+        ></span>
+
+        <span class="nav-item__label">
+          Temporadas
+        </span>
+      </a>
+
+      <a
+        href="../admin/registrar-partida.html"
+        class="nav-item nav-item--fab"
+        data-admin-only
+        hidden
+      >
+        <span
+          class="nav-item__icon nav-item__icon--verde"
+          aria-hidden="true"
+        ></span>
+
+        <span class="nav-item__label">
+          Registrar
+        </span>
+      </a>
+
     </div>
-    <a href="../admin/login.html" class="nav-admin" aria-label="Área administrativa"></a>
+
+    <a
+      href="../admin/login.html"
+      class="nav-admin"
+      aria-label="Área administrativa"
+    ></a>
+
   </nav>
+
+
+  <!-- =========================================================
+       CONTEÚDO PRINCIPAL
+       ========================================================= -->
 
   <main class="container page-content">
 
-    <!-- ============================================
+    <!-- =======================================================
          CABEÇALHO
-         ============================================ -->
-    <header class="secao textura-campo home-hero" style="margin-top: var(--esp-5); padding-bottom: var(--esp-4); text-align: center;">
-      <img src="../assets/icons/logo.jpg" alt="Racha dos Amigos" class="logo-hero" />
-      <h1 class="sr-only">Racha dos Amigos — Dashboard</h1>
-      <div class="eyebrow">Temporada 2026</div>
+         ======================================================= -->
+
+    <header
+      class="secao textura-campo home-hero"
+      style="
+        margin-top: var(--esp-5);
+        padding-bottom: var(--esp-4);
+        text-align: center;
+      "
+    >
+
+      <img
+        src="../assets/icons/logo.jpg"
+        alt="Racha dos Amigos"
+        class="logo-hero"
+      />
+
+      <h1 class="sr-only">
+        Racha dos Amigos — Dashboard
+      </h1>
+
+      <div class="eyebrow">
+        Temporada 2026
+      </div>
+
     </header>
 
-    <!-- ============================================
-         INDICADORES GERAIS
-         (valores virão do Supabase — hoje são exemplo)
-         ============================================ -->
+
+    <!-- =======================================================
+         INDICADORES DA TEMPORADA
+         Os valores são preenchidos pelo inicio.js
+         ======================================================= -->
+
     <section class="secao stats-rail">
+
       <div class="grid-2">
+
+        <!-- PARTIDAS -->
+
         <div class="card card-indicador entrada">
-          <span class="card-indicador__icone">🏟️</span>
-          <span class="card-indicador__valor stat-numero" id="stat-partidas">24</span>
-          <span class="card-indicador__rotulo">Partidas</span>
+
+          <span class="card-indicador__icone">
+            🏟️
+          </span>
+
+          <span
+            class="card-indicador__valor stat-numero"
+            id="stat-partidas"
+          >
+            0
+          </span>
+
+          <span class="card-indicador__rotulo">
+            Partidas
+          </span>
+
         </div>
+
+
+        <!-- GOLS -->
+
         <div class="card card-indicador entrada">
-          <span class="card-indicador__icone">⚽</span>
-          <span class="card-indicador__valor stat-numero" id="stat-gols">187</span>
-          <span class="card-indicador__rotulo">Gols</span>
+
+          <span class="card-indicador__icone">
+            ⚽
+          </span>
+
+          <span
+            class="card-indicador__valor stat-numero"
+            id="stat-gols"
+          >
+            0
+          </span>
+
+          <span class="card-indicador__rotulo">
+            Gols
+          </span>
+
         </div>
+
+
+        <!-- ASSISTÊNCIAS -->
+
         <div class="card card-indicador entrada">
-          <span class="card-indicador__icone">🎯</span>
-          <span class="card-indicador__valor stat-numero" id="stat-assistencias">96</span>
-          <span class="card-indicador__rotulo">Assistências</span>
+
+          <span class="card-indicador__icone">
+            🎯
+          </span>
+
+          <span
+            class="card-indicador__valor stat-numero"
+            id="stat-assistencias"
+          >
+            0
+          </span>
+
+          <span class="card-indicador__rotulo">
+            Assistências
+          </span>
+
         </div>
+
+
+        <!-- DEFESAS -->
+
         <div class="card card-indicador entrada">
-          <span class="card-indicador__icone">🧤</span>
-          <span class="card-indicador__valor stat-numero" id="stat-defesas">142</span>
-          <span class="card-indicador__rotulo">Defesas</span>
+
+          <span class="card-indicador__icone">
+            🧤
+          </span>
+
+          <span
+            class="card-indicador__valor stat-numero"
+            id="stat-defesas"
+          >
+            0
+          </span>
+
+          <span class="card-indicador__rotulo">
+            Defesas
+          </span>
+
         </div>
+
       </div>
+
     </section>
 
-    <!-- ============================================
+
+    <!-- =======================================================
          ÚLTIMA RODADA
-         ============================================ -->
+         O conteúdo é preenchido pelo inicio.js
+         ======================================================= -->
+
     <section class="secao feature-match">
+
       <div class="secao__cabecalho">
-        <h2 class="secao__titulo">🔥 Última Rodada</h2>
+
+        <h2 class="secao__titulo">
+          🔥 Última Rodada
+        </h2>
+
       </div>
+
 
       <div class="card card-rodada entrada">
+
         <div class="card-rodada__meta">
-          <span class="badge badge--verde">RODADA 08</span>
-          <span class="texto-secundario" style="font-size: 0.8125rem;">24/05/2026</span>
+
+          <span class="badge badge--verde">
+            CARREGANDO
+          </span>
+
+          <span
+            class="texto-secundario"
+            style="font-size: 0.8125rem;"
+          >
+            —
+          </span>
+
         </div>
+
 
         <div class="placar">
-          <span class="placar__time placar__time--vencedor">Colete Verde</span>
+
+          <span class="placar__time">
+            Colete Verde
+          </span>
+
           <div class="placar__numeros">
-            <span class="placar__gol placar__gol--vencedor">5</span>
-            <span class="placar__x">×</span>
-            <span class="placar__gol">3</span>
+
+            <span class="placar__gol">
+              0
+            </span>
+
+            <span class="placar__x">
+              ×
+            </span>
+
+            <span class="placar__gol">
+              0
+            </span>
+
           </div>
-          <span class="placar__time">Colete Preto</span>
+
+          <span class="placar__time">
+            Colete Preto
+          </span>
+
         </div>
+
 
         <div class="card-rodada__campeao">
-          🏆 <span>Colete Verde</span>
+          Aguardando partida...
         </div>
+
       </div>
+
     </section>
 
-    <!-- ============================================
+
+    <!-- =======================================================
          SELEÇÃO DA RODADA
-         ============================================ -->
+         ======================================================= -->
+
     <section class="secao team-of-round">
+
       <div class="secao__cabecalho">
-        <h2 class="secao__titulo">⭐ Seleção da Rodada</h2>
+
+        <h2 class="secao__titulo">
+          ⭐ Seleção da Rodada
+        </h2>
+
       </div>
 
-      <div class="linha-scroll" id="selecao-rodada">
-        <div class="jogador-mini entrada">
-          <div class="avatar avatar--destaque">DI</div>
-          <span class="jogador-mini__nome">Diego</span>
-        </div>
-        <div class="jogador-mini entrada">
-          <div class="avatar avatar--destaque">LÉ</div>
-          <span class="jogador-mini__nome">Léo</span>
-        </div>
-        <div class="jogador-mini entrada">
-          <div class="avatar avatar--destaque">RA</div>
-          <span class="jogador-mini__nome">Rafa</span>
-        </div>
+
+      <div
+        class="linha-scroll"
+        id="selecao-rodada"
+      >
+
+        <span class="texto-secundario">
+          Carregando...
+        </span>
+
       </div>
+
     </section>
 
-    <!-- ============================================
+
+    <!-- =======================================================
          MELHOR GOLEIRO DA RODADA
-         ============================================ -->
+         ======================================================= -->
+
     <section class="secao goalkeeper-feature">
+
       <div class="secao__cabecalho">
-        <h2 class="secao__titulo">🧤 Melhor Goleiro</h2>
+
+        <h2 class="secao__titulo">
+          🧤 Melhor Goleiro
+        </h2>
+
       </div>
+
 
       <div class="card card-goleiro entrada">
-        <div class="avatar avatar--destaque" style="width: 64px; height: 64px; font-size: 1.125rem;">RA</div>
-        <div class="card-goleiro__info">
-          <div class="card-goleiro__nome">Rafa</div>
-          <div class="card-goleiro__stat">8 defesas na Rodada 08</div>
+
+        <div
+          class="avatar avatar--destaque"
+          style="
+            width: 64px;
+            height: 64px;
+            font-size: 1.125rem;
+          "
+        >
+          —
         </div>
+
+
+        <div class="card-goleiro__info">
+
+          <div class="card-goleiro__nome">
+            Carregando...
+          </div>
+
+          <div class="card-goleiro__stat">
+            Aguardando dados da rodada.
+          </div>
+
+        </div>
+
       </div>
+
     </section>
 
-    <!-- ============================================
+
+    <!-- =======================================================
          DESTAQUES DA TEMPORADA
-         (calculados automaticamente — hoje são exemplo)
-         ============================================ -->
+         O inicio.js substitui estes cards pelos dados reais.
+         ======================================================= -->
+
     <section class="secao seasonal-highlights">
+
       <div class="secao__cabecalho">
-        <h2 class="secao__titulo">Destaques da Temporada</h2>
+
+        <h2 class="secao__titulo">
+          Destaques da Temporada
+        </h2>
+
       </div>
+
 
       <div class="grid-1">
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">⚽</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Artilheiro</div>
-            <div class="card-destaque__nome">Diego</div>
-          </div>
-          <div class="card-destaque__valor">23 gols</div>
-        </div>
+
+        <!-- Estado inicial enquanto o Supabase carrega -->
 
         <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">🎯</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Líder de Assistências</div>
-            <div class="card-destaque__nome">João</div>
+
+          <div class="card-destaque__icone">
+            ⚽
           </div>
-          <div class="card-destaque__valor">14 assist.</div>
+
+          <div style="flex: 1;">
+
+            <div class="card-destaque__rotulo">
+              Artilheiro
+            </div>
+
+            <div class="card-destaque__nome">
+              Carregando...
+            </div>
+
+          </div>
+
+          <div class="card-destaque__valor">
+            0 gols
+          </div>
+
         </div>
 
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">🏆</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Mais Títulos</div>
-            <div class="card-destaque__nome">Rafa</div>
-          </div>
-          <div class="card-destaque__valor">9 títulos</div>
-        </div>
-
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">⭐</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Mais Seleções</div>
-            <div class="card-destaque__nome">Léo</div>
-          </div>
-          <div class="card-destaque__valor">11 seleções</div>
-        </div>
-
-        <div class="card card-destaque entrada">
-          <div class="card-destaque__icone">🧤</div>
-          <div style="flex: 1;">
-            <div class="card-destaque__rotulo">Melhor Goleiro</div>
-            <div class="card-destaque__nome">Rafa</div>
-          </div>
-          <div class="card-destaque__valor">7 prêmios</div>
-        </div>
       </div>
+
     </section>
 
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+  ></script>
+
   <script src="/js/config.js"></script>
+
   <script src="/js/supabase.js"></script>
+
   <script src="/js/app.js?v=5"></script>
+
   <script src="/js/inicio.js"></script>
+
 </body>
 </html>
