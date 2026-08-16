@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temporada 2026 — Racha dos Amigos</title>
+  <meta name="description" content="Partidas, artilharia, assistências e recordes da Temporada 2026 do Racha dos Amigos." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+  <link rel="stylesheet" href="/css/style.css?v=6" />
+  <link rel="stylesheet" href="/css/responsive.css?v=6" />
+</head>
+<body class="page-season-detail">
+
+  <div id="app-nav"></div>
+
+  <main class="container page-content">
+
+    <!-- Esta página lê a temporada pela URL (?id=2026).
+         Exemplo fixo por enquanto — fica dinâmico na etapa do Supabase. -->
+
+    <!-- ============================================
+         CABEÇALHO
+         ============================================ -->
+    <header class="secao" style="margin-top: var(--esp-5);">
+      <div class="eyebrow">Racha dos Amigos</div>
+      <h1>Temporada 2026</h1>
+      <span class="badge badge--verde" style="margin-top: var(--esp-2);">Ativa</span>
+    </header>
+
+    <!-- ============================================
+         RESUMO DA TEMPORADA
+         ============================================ -->
+    <section class="secao">
+      <div class="grid-2">
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">🏟️</span>
+          <span class="card-indicador__valor stat-numero">24</span>
+          <span class="card-indicador__rotulo">Partidas</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">⚽</span>
+          <span class="card-indicador__valor stat-numero">187</span>
+          <span class="card-indicador__rotulo">Gols</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">🎯</span>
+          <span class="card-indicador__valor stat-numero">96</span>
+          <span class="card-indicador__rotulo">Assistências</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">🧤</span>
+          <span class="card-indicador__valor stat-numero">142</span>
+          <span class="card-indicador__rotulo">Defesas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         TOP 3 DA TEMPORADA (versão resumida dos rankings)
+         ============================================ -->
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <h2 class="secao__titulo">⚽ Artilharia</h2>
+        <a href="rankings.html#artilharia" class="secao__link">Ver tudo</a>
+      </div>
+      <div class="card grid-1 entrada">
+        <a href="jogador.html?id=1" class="ranking-item">
+          <span class="ranking-item__pos ranking-item__pos--ouro">1</span>
+          <div class="avatar">DI</div>
+          <div class="ranking-item__info">
+            <div class="ranking-item__nome">Diego</div>
+            <div class="ranking-item__meta">22 jogos</div>
+          </div>
+          <div class="ranking-item__valor">23</div>
+        </a>
+        <a href="jogador.html?id=2" class="ranking-item">
+          <span class="ranking-item__pos">2</span>
+          <div class="avatar">LÉ</div>
+          <div class="ranking-item__info">
+            <div class="ranking-item__nome">Léo</div>
+            <div class="ranking-item__meta">24 jogos</div>
+          </div>
+          <div class="ranking-item__valor">15</div>
+        </a>
+        <a href="jogador.html?id=5" class="ranking-item">
+          <span class="ranking-item__pos">3</span>
+          <div class="avatar">JO</div>
+          <div class="ranking-item__info">
+            <div class="ranking-item__nome">João</div>
+            <div class="ranking-item__meta">21 jogos</div>
+          </div>
+          <div class="ranking-item__valor">12</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <h2 class="secao__titulo">🏆 Títulos</h2>
+        <a href="rankings.html#titulos" class="secao__link">Ver tudo</a>
+      </div>
+      <div class="card grid-1 entrada">
+        <a href="jogador.html?id=4" class="ranking-item">
+          <span class="ranking-item__pos ranking-item__pos--ouro">1</span>
+          <div class="avatar">RA</div>
+          <div class="ranking-item__info">
+            <div class="ranking-item__nome">Rafa</div>
+            <div class="ranking-item__meta">24 jogos</div>
+          </div>
+          <div class="ranking-item__valor">9</div>
+        </a>
+        <a href="jogador.html?id=2" class="ranking-item">
+          <span class="ranking-item__pos">2</span>
+          <div class="avatar">LÉ</div>
+          <div class="ranking-item__info">
+            <div class="ranking-item__nome">Léo</div>
+            <div class="ranking-item__meta">24 jogos</div>
+          </div>
+          <div class="ranking-item__valor">8</div>
+        </a>
+        <a href="jogador.html?id=1" class="ranking-item">
+          <span class="ranking-item__pos">3</span>
+          <div class="avatar">DI</div>
+          <div class="ranking-item__info">
+            <div class="ranking-item__nome">Diego</div>
+            <div class="ranking-item__meta">22 jogos</div>
+          </div>
+          <div class="ranking-item__valor">7</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================
+         LINK PARA AS PARTIDAS DESTA TEMPORADA
+         ============================================ -->
+    <section class="secao" style="padding-bottom: var(--esp-4);">
+      <a href="partidas.html" class="btn btn--secundario btn--bloco">
+        ⚽ Ver todas as partidas da temporada
+      </a>
+    </section>
+
+  </main>
+
+  <script src="/js/app.js?v=6"></script>
+</body>
+</html>

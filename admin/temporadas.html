@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>Gerenciar temporadas</title>
+
+<link rel="icon" href="../assets/icons/favicon.png">
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap"
+  rel="stylesheet"
+>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/responsive.css">
+
+</head>
+
+<body class="admin-body">
+
+<main class="container admin-page">
+
+<header class="admin-header">
+
+<div>
+
+<span class="eyebrow">
+Admin
+</span>
+
+<h1>
+Temporadas
+</h1>
+
+</div>
+
+<a
+  href="dashboard.html"
+  class="btn btn--secundario"
+>
+Voltar
+</a>
+
+</header>
+
+
+<section class="secao">
+
+<form
+  id="nova-temporada"
+  class="card form-grid"
+>
+
+<div class="form-group">
+
+<label>
+Nome
+</label>
+
+<input
+  name="name"
+  class="input"
+  placeholder="Temporada 2026"
+  required
+>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Ano
+</label>
+
+<input
+  name="year"
+  type="number"
+  class="input"
+  required
+>
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+Descrição
+</label>
+
+<textarea
+  name="description"
+  class="input"
+></textarea>
+
+</div>
+
+
+<div class="full">
+
+<button
+  class="btn btn--primario"
+>
+Criar temporada
+</button>
+
+</div>
+
+</form>
+
+</section>
+
+
+<section class="secao">
+
+<div
+  id="lista-admin-temporadas"
+  class="grid-1"
+></div>
+
+</section>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/config.js"></script>
+<script src="../js/supabase.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/auth.js"></script>
+
+<script>
+
+document.addEventListener(
+  "DOMContentLoaded",
+  async () => {
+
+    if (!await Auth.requireAdmin()) {
+      return;
+    }
+
+    const list =
+      document.querySelector(
+        "#lista-admin-temporadas"
+      );
+
+
+    async function load() {
+
+      const {
+        data,
+        error
+      } = await supabaseClient
+        .from("temporadas")
+        .select("*")
+        .order("ano", {
+          ascending: false
+        });
+
+      if (error) {
+
+        App.handleError(error);
+        return;
+
+      }
+
+      list.innerHTML =
+        data.map(season => `
+
+          <div class="card">
+
+            <div class="season-card__top">
+
+              <span class="badge ${
+                season.ativa
+                  ? "badge--verde"
+                  : "badge--neutro"
+              }">
+
+                ${
+                  season.ativa
+                    ? "Ativa"
+                    : "Encerrada"
+                }
+
+              </span>
+
+              <strong>
+                ${season.ano}
+              </strong>
+
+            </div>
+
+            <h3>
+              ${App.escapeHTML(
+                season.nome
+              )}
+            </h3>
+
+            <button
+              class="btn btn--secundario"
+              type="button"
+              data-ativar-temporada="${season.id}"
+              ${season.ativa ? "disabled" : ""}
+            >
+              ${season.ativa ? "Temporada ativa" : "Tornar ativa"}
+            </button>
+
+          </div>
+
+        `).join("");
+    }
+
+
+    document
+      .querySelector("#nova-temporada")
+      .addEventListener(
+        "submit",
+        async event => {
+
+          event.preventDefault();
+
+          const data =
+            Object.fromEntries(
+              new FormData(
+                event.currentTarget
+              )
+            );
+
+          const {
+            error
+          } = await supabaseClient
+            .from("temporadas")
+            .insert({
+              nome: data.name,
+              ano: Number(data.year)
+            });
+
+          if (error) {
+
+            App.handleError(
+              error,
+              "Não foi possível criar a temporada."
+            );
+
+            return;
+          }
+
+          event.currentTarget.reset();
+
+          App.toast(
+            "Temporada criada."
+          );
+
+          load();
+        }
+      );
+
+    list.addEventListener(
+      "click",
+      async event => {
+
+        const button = event.target.closest(
+          "[data-ativar-temporada]"
+        );
+
+        if (!button) return;
+
+        button.disabled = true;
+
+        const { error: erroDesativar } =
+          await supabaseClient
+            .from("temporadas")
+            .update({ ativa: false })
+            .eq("ativa", true);
+
+        const { error: erroAtivar } =
+          await supabaseClient
+            .from("temporadas")
+            .update({ ativa: true })
+            .eq("id", button.dataset.ativarTemporada);
+
+        if (erroDesativar || erroAtivar) {
+
+          App.handleError(
+            erroDesativar || erroAtivar,
+            "Não foi possível ativar a temporada."
+          );
+
+          button.disabled = false;
+          return;
+        }
+
+        App.toast("Temporada ativa atualizada.");
+        load();
+      }
+    );
+
+
+    load();
+
+  }
+);
+
+</script>
+
+</body>
+</html>

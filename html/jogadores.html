@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jogadores — Racha dos Amigos</title>
+  <meta name="description" content="Veja todos os jogadores do Racha dos Amigos e suas estatísticas: gols, assistências, títulos e mais." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+  <link rel="stylesheet" href="/css/style.css?v=6" />
+  <link rel="stylesheet" href="/css/responsive.css?v=6" />
+</head>
+<body class="page-players">
+
+  <div id="app-nav"></div>
+
+  <main class="container page-content">
+
+    <!-- ============================================
+         CABEÇALHO
+         ============================================ -->
+    <header class="secao page-heading" style="margin-top: var(--esp-5);">
+      <div class="eyebrow" id="jogadores-total">8 jogadores</div>
+      <h1>👥 Jogadores</h1>
+    </header>
+
+    <!-- ============================================
+         BUSCA
+         ============================================ -->
+    <section class="secao" style="margin-top: var(--esp-4);">
+      <label class="busca">
+        <span class="busca__icone" aria-hidden="true">🔍</span>
+        <input
+          type="text"
+          class="busca__input"
+          id="busca-jogador"
+          placeholder="Buscar jogador..."
+          aria-label="Buscar jogador por nome"
+        />
+      </label>
+    </section>
+
+    <!-- ============================================
+         FILTROS
+         ============================================ -->
+    <section class="secao" style="margin-top: var(--esp-3);">
+      <div class="chips" id="filtros-jogadores" role="group" aria-label="Filtrar jogadores">
+        <button class="chip chip--ativo" data-filtro="todos">Todos</button>
+        <button class="chip" data-filtro="linha">Jogadores de Linha</button>
+        <button class="chip" data-filtro="goleiro">Goleiros</button>
+        <button class="chip" data-filtro="ativo">Ativos</button>
+        <button class="chip" data-filtro="inativo">Inativos</button>
+      </div>
+    </section>
+
+    <!-- ============================================
+         LISTA DE JOGADORES
+         (dados de exemplo — virão do Supabase na próxima etapa)
+         ============================================ -->
+    <section class="secao">
+      <div class="grid-1" id="lista-jogadores">
+
+        <a href="jogador.html?id=1" class="card card-jogador card--link entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">DI</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">Diego</span>
+              <span class="badge badge--neutro">Linha</span>
+              <span class="badge badge--verde">Ativo</span>
+            </div>
+            <div class="card-jogador__meta">"Diegão"</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>22</strong></span>
+              <span class="stats-strip__item">⚽ <strong>23</strong></span>
+              <span class="stats-strip__item">🎯 <strong>9</strong></span>
+              <span class="stats-strip__item">🏆 <strong>7</strong></span>
+              <span class="stats-strip__item">⭐ <strong>8</strong></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="jogador.html?id=2" class="card card-jogador card--link entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">LÉ</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">Léo</span>
+              <span class="badge badge--neutro">Linha</span>
+              <span class="badge badge--verde">Ativo</span>
+            </div>
+            <div class="card-jogador__meta">—</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>24</strong></span>
+              <span class="stats-strip__item">⚽ <strong>15</strong></span>
+              <span class="stats-strip__item">🎯 <strong>7</strong></span>
+              <span class="stats-strip__item">🏆 <strong>8</strong></span>
+              <span class="stats-strip__item">⭐ <strong>11</strong></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="jogador.html?id=3" class="card card-jogador card--link entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">GU</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">Gui</span>
+              <span class="badge badge--neutro">Linha</span>
+              <span class="badge badge--verde">Ativo</span>
+            </div>
+            <div class="card-jogador__meta">—</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>20</strong></span>
+              <span class="stats-strip__item">⚽ <strong>9</strong></span>
+              <span class="stats-strip__item">🎯 <strong>4</strong></span>
+              <span class="stats-strip__item">🏆 <strong>5</strong></span>
+              <span class="stats-strip__item">⭐ <strong>3</strong></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="jogador.html?id=4" class="card card-jogador card--link entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">RA</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">Rafa</span>
+              <span class="badge badge--neutro">Goleiro</span>
+              <span class="badge badge--verde">Ativo</span>
+            </div>
+            <div class="card-jogador__meta">—</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>24</strong></span>
+              <span class="stats-strip__item">⚽ <strong>0</strong></span>
+              <span class="stats-strip__item">🎯 <strong>0</strong></span>
+              <span class="stats-strip__item">🏆 <strong>9</strong></span>
+              <span class="stats-strip__item">⭐ <strong>10</strong></span>
+              <span class="stats-strip__item">🧤 <strong>88</strong></span>
+              <span class="stats-strip__item">🥇 <strong>7</strong></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="jogador.html?id=5" class="card card-jogador card--link entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">JO</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">João</span>
+              <span class="badge badge--neutro">Linha</span>
+              <span class="badge badge--verde">Ativo</span>
+            </div>
+            <div class="card-jogador__meta">—</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>21</strong></span>
+              <span class="stats-strip__item">⚽ <strong>12</strong></span>
+              <span class="stats-strip__item">🎯 <strong>14</strong></span>
+              <span class="stats-strip__item">🏆 <strong>6</strong></span>
+              <span class="stats-strip__item">⭐ <strong>6</strong></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="jogador.html?id=6" class="card card-jogador card--link entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">PE</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">Pedro</span>
+              <span class="badge badge--neutro">Linha</span>
+              <span class="badge badge--verde">Ativo</span>
+            </div>
+            <div class="card-jogador__meta">—</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>18</strong></span>
+              <span class="stats-strip__item">⚽ <strong>8</strong></span>
+              <span class="stats-strip__item">🎯 <strong>5</strong></span>
+              <span class="stats-strip__item">🏆 <strong>4</strong></span>
+              <span class="stats-strip__item">⭐ <strong>2</strong></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="jogador.html?id=7" class="card card-jogador card--link entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">LU</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">Lucas</span>
+              <span class="badge badge--neutro">Linha</span>
+              <span class="badge badge--verde">Ativo</span>
+            </div>
+            <div class="card-jogador__meta">—</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>15</strong></span>
+              <span class="stats-strip__item">⚽ <strong>4</strong></span>
+              <span class="stats-strip__item">🎯 <strong>3</strong></span>
+              <span class="stats-strip__item">🏆 <strong>3</strong></span>
+              <span class="stats-strip__item">⭐ <strong>1</strong></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="jogador.html?id=8" class="card card-jogador card--link card-jogador--inativo entrada">
+          <div class="avatar" style="width: 60px; height: 60px;">MA</div>
+          <div class="card-jogador__info">
+            <div class="card-jogador__topo">
+              <span class="card-jogador__nome">Matheus</span>
+              <span class="badge badge--neutro">Linha</span>
+              <span class="badge badge--neutro">Inativo</span>
+            </div>
+            <div class="card-jogador__meta">—</div>
+            <div class="stats-strip">
+              <span class="stats-strip__item">🏟️ <strong>10</strong></span>
+              <span class="stats-strip__item">⚽ <strong>2</strong></span>
+              <span class="stats-strip__item">🎯 <strong>1</strong></span>
+              <span class="stats-strip__item">🏆 <strong>1</strong></span>
+              <span class="stats-strip__item">⭐ <strong>0</strong></span>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Estado vazio (fica escondido — a busca/filtro mostra isso via JS na próxima etapa) -->
+      <div class="estado" id="estado-vazio" style="display: none;">
+        <div class="estado__icone">🔍</div>
+        <div class="estado__titulo">Nenhum jogador encontrado</div>
+        <p>Tenta buscar por outro nome ou mudar o filtro.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/supabase.js"></script>
+  <script src="/js/app.js?v=6"></script>
+  <script src="/js/jogadores.js"></script>
+</body>
+</html>

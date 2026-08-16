@@ -1,0 +1,308 @@
+/* ============================================================
+   RACHA DOS AMIGOS — RESPONSIVIDADE
+   ============================================================
+   Abordagem mobile-first: style.css já define o visual base
+   pensado para 360–430px. Aqui só entram os ajustes conforme
+   a tela cresce.
+   ============================================================ */
+
+/* ---- Tablets (≥ 768px) ---- */
+@media (min-width: 768px) {
+  .container {
+    max-width: 700px;
+  }
+
+  .grid-2 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card-indicador__valor {
+    font-size: 2.5rem;
+  }
+
+  .form-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .player-stat-row {
+    grid-template-columns: minmax(170px, 1.5fr) repeat(3, minmax(88px, 1fr));
+    align-items: end;
+  }
+
+  .player-stat-row > .form-group:last-child {
+    grid-column: span 2;
+  }
+}
+
+/* ---- Desktop (≥ 1024px) ---- */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 0 var(--esp-6);
+  }
+
+  body {
+    /* Sem barra fixa embaixo no desktop — a navegação vai pro topo */
+    padding-bottom: var(--esp-6);
+    padding-top: calc(72px + var(--esp-6));
+  }
+
+  /* Navegação vira uma barra superior fixa */
+  .nav {
+    position: fixed;
+    top: 0;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    height: 72px;
+    padding-bottom: 0;
+    border-top: none;
+    border-bottom: 1px solid var(--borda);
+    justify-content: center;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-6);
+    padding: 0 var(--esp-6);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-2);
+    font-family: var(--fonte-display);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-right: auto;
+  }
+
+  .nav-links {
+    width: auto;
+    height: auto;
+    gap: var(--esp-5);
+    justify-content: flex-start;
+  }
+
+  .nav-item {
+    flex-direction: row;
+    flex: none;
+    height: auto;
+    padding: var(--esp-2) var(--esp-1);
+    gap: var(--esp-2);
+  }
+
+  .nav-item__icon {
+    width: 16px;
+    height: 16px;
+    flex-basis: 16px;
+    margin: 0;
+  }
+
+  .nav-item__label {
+    font-size: 0.875rem;
+  }
+
+  .nav-item:hover {
+    color: var(--texto);
+  }
+
+  .admin-body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .nav-item {
+    position: relative;
+    border-radius: var(--raio-total);
+    transition: color var(--transicao), background var(--transicao), transform var(--transicao);
+  }
+
+  .nav-item:hover {
+    background: var(--bg-elevado-2);
+    transform: translateY(-2px);
+  }
+
+  /* No desktop o botão de registrar vira um botão normal em
+     destaque, sem o efeito de FAB flutuante (que é uma
+     linguagem tipicamente mobile). */
+  .nav-item--fab {
+    flex-direction: row;
+    background: var(--verde);
+    color: #06170d;
+    padding: var(--esp-2) var(--esp-4);
+    border-radius: var(--raio-total);
+  }
+
+  .nav-item--fab .nav-item__icon {
+    width: 16px;
+    height: 16px;
+    flex-basis: 16px;
+    background: var(--verde);
+    margin-top: 0;
+    box-shadow: inset 0 0 0 4px #06170d;
+    border: 2px solid #06170d;
+    color: var(--verde);
+  }
+
+  .nav-item--fab .nav-item__label {
+    color: #06170d;
+  }
+
+  .nav-item--fab:hover {
+    background: #31d476;
+    color: #06170d;
+  }
+
+  .nav-admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--raio-total);
+    background: var(--bg-elevado-2);
+    margin-left: var(--esp-2);
+  }
+
+  .nav-admin:hover {
+    background: var(--bg-elevado);
+  }
+
+  /* Cards ganham hover discreto no desktop */
+  .card {
+    transition: border-color var(--transicao), transform var(--transicao);
+  }
+
+  .card:hover {
+    border-color: var(--texto-terciario);
+  }
+
+  .match-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-page { padding-top: var(--esp-7); }
+
+  #app-toast { bottom: var(--esp-5); }
+}
+
+@media (hover: hover) {
+  .nav-item:hover .nav-item__icon {
+    transform: scale(1.16);
+    box-shadow: 0 0 0 5px currentColor;
+  }
+}
+
+/* ---- Telas bem grandes: limita a largura pra não esticar demais ---- */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1080px;
+  }
+}
+
+/* Navegação editorial no desktop: uma faixa lateral permanente. */
+@media (min-width: 1180px) {
+  body:not(.admin-body) {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 248px;
+  }
+
+  body:not(.admin-body) .nav {
+    width: 248px;
+    height: 100vh;
+    inset: 0 auto 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 28px 16px 18px;
+    background: #0b0f0b;
+    border-right: 1px solid var(--borda);
+    border-bottom: 0;
+  }
+
+  body:not(.admin-body) .nav-logo {
+    display: flex;
+    margin: 0 0 38px;
+    padding: 0 10px;
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+  }
+
+  body:not(.admin-body) .nav-logo__img {
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+  }
+
+  body:not(.admin-body) .nav-links {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    height: auto;
+    gap: 3px;
+  }
+
+  body:not(.admin-body) .nav-item {
+    justify-content: flex-start;
+    width: 100%;
+    padding: 11px 12px;
+    gap: 12px;
+    color: var(--texto-secundario);
+    border-radius: 2px;
+  }
+
+  body:not(.admin-body) .nav-item::before {
+    content: '';
+    width: 2px;
+    height: 18px;
+    margin-left: -12px;
+    background: transparent;
+    transition: background var(--transicao);
+  }
+
+  body:not(.admin-body) .nav-item--ativo {
+    color: var(--texto);
+    background: #151c15;
+  }
+
+  body:not(.admin-body) .nav-item--ativo::before { background: var(--verde); }
+  body:not(.admin-body) .nav-item__label { font-size: 0.88rem; }
+  body:not(.admin-body) .nav-item__icon { width: 13px; height: 13px; flex-basis: 13px; }
+
+  body:not(.admin-body) .nav-item--fab {
+    margin-top: auto;
+    padding: 12px;
+    background: var(--verde);
+    color: #06170d;
+    border-radius: 2px;
+  }
+
+  body:not(.admin-body) .nav-item--fab::before { display: none; }
+  body:not(.admin-body) .nav-item--fab .nav-item__icon {
+    width: 13px;
+    height: 13px;
+    flex-basis: 13px;
+    border-color: #06170d;
+    background: #06170d;
+    box-shadow: inset 0 0 0 3px var(--verde);
+  }
+  body:not(.admin-body) .nav-item--fab .nav-item__label { color: #06170d; }
+
+  body:not(.admin-body) .nav-admin {
+    display: flex;
+    width: 100%;
+    height: 42px;
+    margin: 16px 0 0;
+    border-radius: 2px;
+    background: transparent;
+    border: 1px solid var(--borda);
+  }
+
+  body:not(.admin-body) .page-content { max-width: 1180px; padding-top: 48px; padding-bottom: 72px; }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diego — Racha dos Amigos</title>
+  <meta name="description" content="Estatísticas completas e histórico de partidas do jogador no Racha dos Amigos." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="/assets/icons/favicon.png" />
+  <link rel="stylesheet" href="/css/style.css?v=6" />
+  <link rel="stylesheet" href="/css/responsive.css?v=6" />
+</head>
+<body class="page-player-profile">
+
+  <div id="app-nav"></div>
+
+  <main class="container page-content">
+
+    <!-- ============================================
+         Esta página lê o jogador pela URL (?id=1).
+         Por enquanto mostra o Diego como exemplo fixo —
+         na etapa do Supabase isso vira dinâmico de verdade.
+         ============================================ -->
+
+    <!-- ============================================
+         CABEÇALHO DO PERFIL
+         ============================================ -->
+    <header class="secao perfil-cabecalho" style="margin-top: var(--esp-5);">
+      <div class="avatar" id="perfil-avatar">DI</div>
+      <h1 id="perfil-nome">Diego</h1>
+      <div class="perfil-cabecalho__apelido" id="perfil-apelido">"Diegão"</div>
+      <span class="badge badge--neutro" id="perfil-posicao">Jogador de Linha</span>
+    </header>
+
+    <!-- ============================================
+         ESTATÍSTICAS
+         ============================================ -->
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <h2 class="secao__titulo">Estatísticas</h2>
+      </div>
+
+      <div class="grid-2" id="perfil-stats">
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">🏟️</span>
+          <span class="card-indicador__valor stat-numero">22</span>
+          <span class="card-indicador__rotulo">Jogos</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">⚽</span>
+          <span class="card-indicador__valor stat-numero">23</span>
+          <span class="card-indicador__rotulo">Gols</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">📊</span>
+          <span class="card-indicador__valor stat-numero">1.05</span>
+          <span class="card-indicador__rotulo">Média / Jogo</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">🎯</span>
+          <span class="card-indicador__valor stat-numero">9</span>
+          <span class="card-indicador__rotulo">Assistências</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">⭐</span>
+          <span class="card-indicador__valor stat-numero">8</span>
+          <span class="card-indicador__rotulo">Seleções</span>
+        </div>
+        <div class="card card-indicador entrada">
+          <span class="card-indicador__icone">🏆</span>
+          <span class="card-indicador__valor stat-numero">7</span>
+          <span class="card-indicador__rotulo">Títulos</span>
+        </div>
+      </div>
+
+      <!-- Estas duas linhas só aparecem quando o jogador é goleiro -->
+      <!--
+      <div class="card card-indicador entrada">🧤 Defesas</div>
+      <div class="card card-indicador entrada">🥇 Melhor Goleiro</div>
+      -->
+    </section>
+
+    <!-- ============================================
+         GRÁFICO — evolução de gols por rodada
+         (SVG puro, sem biblioteca — leve pro celular)
+         ============================================ -->
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <h2 class="secao__titulo">📈 Gols por Rodada</h2>
+      </div>
+
+      <div class="card entrada">
+        <div class="grafico-container" role="img" aria-label="Gráfico de gols por rodada: rodada 3 com 0 gols, rodada 4 com 1 gol, rodada 5 com 3 gols, rodada 6 com 0 gols, rodada 7 com 1 gol, rodada 8 com 2 gols">
+          <div class="grafico-coluna">
+            <span class="grafico-coluna__valor">0</span>
+            <div class="grafico-barra" style="height: 6px;"></div>
+            <span class="grafico-coluna__rotulo">R03</span>
+          </div>
+          <div class="grafico-coluna">
+            <span class="grafico-coluna__valor">1</span>
+            <div class="grafico-barra" style="height: 24px;"></div>
+            <span class="grafico-coluna__rotulo">R04</span>
+          </div>
+          <div class="grafico-coluna">
+            <span class="grafico-coluna__valor">3</span>
+            <div class="grafico-barra" style="height: 72px; background: var(--verde);"></div>
+            <span class="grafico-coluna__rotulo">R05</span>
+          </div>
+          <div class="grafico-coluna">
+            <span class="grafico-coluna__valor">0</span>
+            <div class="grafico-barra" style="height: 6px;"></div>
+            <span class="grafico-coluna__rotulo">R06</span>
+          </div>
+          <div class="grafico-coluna">
+            <span class="grafico-coluna__valor">1</span>
+            <div class="grafico-barra" style="height: 24px;"></div>
+            <span class="grafico-coluna__rotulo">R07</span>
+          </div>
+          <div class="grafico-coluna">
+            <span class="grafico-coluna__valor">2</span>
+            <div class="grafico-barra" style="height: 48px; background: var(--verde);"></div>
+            <span class="grafico-coluna__rotulo">R08</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================
+         HISTÓRICO DE PARTIDAS
+         ============================================ -->
+    <section class="secao">
+      <div class="secao__cabecalho">
+        <h2 class="secao__titulo">Histórico</h2>
+      </div>
+
+      <div class="grid-1">
+        <a href="partida.html?id=8" class="card card--link historico-item entrada">
+          <div class="historico-item__rodada">
+            <span class="badge badge--verde">RODADA 08</span>
+            <span class="historico-item__data">24/05/2026</span>
+          </div>
+          <div class="historico-item__stats">
+            <span class="stats-strip__item">⚽ <strong>2</strong></span>
+            <span class="stats-strip__item">🎯 <strong>1</strong></span>
+            <span title="Seleção da Rodada">⭐</span>
+            <span title="Campeão">🏆</span>
+          </div>
+        </a>
+
+        <a href="partida.html?id=7" class="card card--link historico-item entrada">
+          <div class="historico-item__rodada">
+            <span class="badge badge--verde">RODADA 07</span>
+            <span class="historico-item__data">17/05/2026</span>
+          </div>
+          <div class="historico-item__stats">
+            <span class="stats-strip__item">⚽ <strong>1</strong></span>
+            <span class="stats-strip__item">🎯 <strong>0</strong></span>
+          </div>
+        </a>
+
+        <a href="partida.html?id=6" class="card card--link historico-item entrada">
+          <div class="historico-item__rodada">
+            <span class="badge badge--verde">RODADA 06</span>
+            <span class="historico-item__data">10/05/2026</span>
+          </div>
+          <div class="historico-item__stats">
+            <span class="stats-strip__item">⚽ <strong>0</strong></span>
+            <span class="stats-strip__item">🎯 <strong>1</strong></span>
+          </div>
+        </a>
+
+        <a href="partida.html?id=5" class="card card--link historico-item entrada">
+          <div class="historico-item__rodada">
+            <span class="badge badge--verde">RODADA 05</span>
+            <span class="historico-item__data">03/05/2026</span>
+          </div>
+          <div class="historico-item__stats">
+            <span class="stats-strip__item">⚽ <strong>3</strong></span>
+            <span class="stats-strip__item">🎯 <strong>0</strong></span>
+            <span title="Seleção da Rodada">⭐</span>
+            <span title="Campeão">🏆</span>
+          </div>
+        </a>
+
+        <a href="partida.html?id=4" class="card card--link historico-item entrada">
+          <div class="historico-item__rodada">
+            <span class="badge badge--verde">RODADA 04</span>
+            <span class="historico-item__data">26/04/2026</span>
+          </div>
+          <div class="historico-item__stats">
+            <span class="stats-strip__item">⚽ <strong>1</strong></span>
+            <span class="stats-strip__item">🎯 <strong>1</strong></span>
+          </div>
+        </a>
+
+        <a href="partida.html?id=3" class="card card--link historico-item entrada">
+          <div class="historico-item__rodada">
+            <span class="badge badge--verde">RODADA 03</span>
+            <span class="historico-item__data">19/04/2026</span>
+          </div>
+          <div class="historico-item__stats">
+            <span class="stats-strip__item">⚽ <strong>0</strong></span>
+            <span class="stats-strip__item">🎯 <strong>0</strong></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/config.js"></script>
+  <script src="/js/supabase.js"></script>
+  <script src="/js/app.js?v=6"></script>
+  <script src="/js/jogadores.js"></script>
+</body>
+</html>
